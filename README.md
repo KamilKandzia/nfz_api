@@ -2,6 +2,8 @@
 # Analysis of the NFZ dataset https://kamil-kandzia.shinyapps.io/nfz_api/
 The application was created in shiny (R) environment using bs4dash (one of the implementation of bootstrap 4). 
 
+![me](https://bbakfw.am.files.1drv.com/y4m-yJMRl_jtJoAGbGJ3ldPzuaJfe_bWejCJHGkRZByKtKVlDLyOkogO3FKeKQfGlB_AWd6DorAqzt2Br_CA_b3sj80ooCJ976dzyHnFF2sZzN8LdbhiEvkOc2wHgvrodCjr47D_Zq7Nl23K5z_Qq-RC9fOSUUoJK6KblyVW6I8YswFGQNf8AwI6uPdKqGDKSOokMKtw92MO6Ry32UDfvaWtA/nfz.gif?psid=1)
+
 Using the NFZ data under the "API Statystyki NFZ - Refundacja Apteczna" (eng. NFZ Statistics API - Pharmaceutical Refund), 5 different data analysis scenarios are presented.
 
 **Analysis of one NFZ branch**
