@@ -1,35 +1,33 @@
-# NFZ_API https://api.nfz.gov.pl/app-stat-api-ra/
-# Analysis of the NFZ dataset https://kamil-kandzia.shinyapps.io/nfz_api/
-The application was created in shiny (R) environment using bs4dash (one of the implementation of bootstrap 4). 
+# NFZ API
+During my master's thesis, which was covered by the diabetic's topic, I have to get some data connected to that. I discovered that there were available public data of the reimbursement by the NFZ (that's the polish analog of the NHS). 
 
-![me](https://bbakfw.am.files.1drv.com/y4m-yJMRl_jtJoAGbGJ3ldPzuaJfe_bWejCJHGkRZByKtKVlDLyOkogO3FKeKQfGlB_AWd6DorAqzt2Br_CA_b3sj80ooCJ976dzyHnFF2sZzN8LdbhiEvkOc2wHgvrodCjr47D_Zq7Nl23K5z_Qq-RC9fOSUUoJK6KblyVW6I8YswFGQNf8AwI6uPdKqGDKSOokMKtw92MO6Ry32UDfvaWtA/nfz.gif?psid=1)
+The website allows for comprehensive data analysis. In particular, the emphasis was placed on sales for given branches of the NFZ. Additionally, a year-to-year analysis was introduced. As well as analysis of the division of age groups according to the attributes.
 
-Using the NFZ data under the "API Statystyki NFZ - Refundacja Apteczna" (eng. NFZ Statistics API - Pharmaceutical Refund), 5 different data analysis scenarios are presented.
+[Live demo](https://kamil-kandzia.shinyapps.io/nfz_api/)
 
-**Analysis of one NFZ branch**
+![Demo](https://bbakfw.am.files.1drv.com/y4m-yJMRl_jtJoAGbGJ3ldPzuaJfe_bWejCJHGkRZByKtKVlDLyOkogO3FKeKQfGlB_AWd6DorAqzt2Br_CA_b3sj80ooCJ976dzyHnFF2sZzN8LdbhiEvkOc2wHgvrodCjr47D_Zq7Nl23K5z_Qq-RC9fOSUUoJK6KblyVW6I8YswFGQNf8AwI6uPdKqGDKSOokMKtw92MO6Ry32UDfvaWtA/nfz.gif?psid=1)
 
-**Analysis of all NFZ branches (16)**
+On the left sidebar, there are links to the relevant tabs. On the right side, there is a product search engine by active substance or product name. By default, the first item in the Suggestion field (this is the resulting product or active substance within the dictionary method).
 
-**Data analysis year-on-year**
+The choice of dates applies only for 2017 and 2018, as only such data are delivered by the government services. The NFZ division field is used in the 'One division NFZ' tab.
 
-**Analysis of data month to month**
+The additional attribute Dose allows selecting only products with a specific dose.
 
-**Analysis based on age groups**
+For more information on the NFZ API go to https://api.nfz.gov.pl/app-stat-api-ra/
 
-# How to start the application?
-You need to have installed Rstudio with R enviroment. For the bs4Dash library it is recommended to install from the GitHub source (https://github.com/RinteRface/bs4Dash), as the version may differ from the one on CRAN.
+## Analysis
+### One division of NFZ
+Analysis of one NFZ branch is available for many products. Within this functionality, two charts are displayed. Each of them concerning the sale of specific products in a given area. The first one takes the label with the dose, while the second one shows the aggregated data.
 
-# How to use the application?
-The Sidebar on the left allows you to select one of five possible data analysis options. There is also an instruction and general information about the project.
+Just choose from the right sidebar NFZ division and click the appropriate button on the tab to make an analysis.
 
-The Sidebar on the right allows you to choose your medicines by name or active substance. Due to the data limit of one query of 25 items, only as many items are shown. The list is dynamically updated and the first item is selected by default for analysis. It is possible to select multiple drugs as well as active substances.
+In some cases, there may appear many products with the same pill per pack and dose amount, but they differ with the EAN code.
 
-**Please note that products may be under many active substances despite their usual name.** For example, Mesopral (esomeprazolum magneticum) belongs to the group of esomeprazolums and the name (esomeprazolum) of the active substance appears on the package.
+### All divisions of NFZ
+In this tab, you can analyze sales by NFZ division. Just choose from the right sidebar NFZ division and click the appropriate button.
 
-**The data are available from 2017-01-01 to 2018-12-31.**
+### Yearly provision
+Among the available functionalities of the NFZ API, it is possible to compare year-to-year sales of a product based on active substance or product name. Due to the availability of 2017-2018, it is only possible to compare these two years.
 
-A choice of drugs with a given dose is also available, but the available tables allow for analysis with and without a dose.
-
-**Charts**
-
-Each of the analysis tabs has a gear wheel and the Analyse button. You can use the gear to enable and disable the legend and labels for renderPieChart/renderBarChart (ECharts2Shiny). Since these charts do not generate in a reactive way, you have to click Analyse again. Please note that the options are different for each of the tabs, and modifications from each tab are necessary.
+### Age group
+Grouping is based on eight age groups available in the NFZ API (the last attribute is eliminated because it means undefined age).
